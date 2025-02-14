@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/footer.astro';
+import Proyect from '../components/newproyect.astro';
+
+const captiaImage = `<a href="https://www.captia.es/" target="_blank"><img src="/public/captia-ingenieria.jpg" alt="Captia Ingeniería" class="inline-block w-16 h-8"><span class="text-orange-500 text-xl font-bold"> INGENIERIA</span></a>`;
+const introductionText = `¡Hola! Soy un apasionado del desarrollo de software, especializado en .NET y trabajando como desarrollador de producto y analista programador en ${captiaImage}. Me motiva crear soluciones que optimizan procesos y potencian la automatización empresarial, facilitando la vida de las personas y las empresas.
+
+También disfruto explorando el desarrollo web, siempre buscando formas de mejorar la experiencia digital. Y cuando no estoy entre líneas de código, me encontrarás haciendo deporte o disfrutando de un estilo de vida saludable, porque para mí, el equilibrio entre tecnología y bienestar es la clave.
+
+Si quieres hablar de software, innovación o simplemente intercambiar ideas, aquí estoy. 🚀💻🏋️‍♂️`;
+---
+
+<Layout>
+    <div class="container mx-auto px-4 mt-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="flex flex-col items-center justify-center">
+                <img src="/IMG_20240820_141719.jpg" alt="Foto de Israel Casado" class="w-full h-auto">
+                <div class="flex items-center mt-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                        <path fill="none" stroke="#e31152" stroke-linecap="round" stroke-linejoin="round" d="m12.603 32.066l11.432 11.432l7.624-7.624m2.264-2.264l1.51-1.51c6.313-6.313 6.313-16.549 0-22.863q0 0 0 0c-6.314-6.314-16.55-6.314-22.865 0q0 0 0 0a16.17 16.17 0 0 0-2.064 20.333" stroke-width="1" />
+                        <circle cx="24.038" cy="20.631" r="5.385" fill="none" stroke="#e31152" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" />
+                    </svg>
+                    <span class="ml-2 text-white">MADRID - ESPAÑA</span>
+                </div>
+            </div>
+            <div class="col-span-1 md:col-span-2 flex items-center justify-center text-center">
+              <p class="text-lg italic text-center leading-relaxed max-w-3xl mx-auto" set:html={introductionText}></p>
+
+          </div>
+        </div>
+    </div>
+
+    <div class="flex items-center justify-center mt-8">
+        <div class="border-t border-gray-300 w-1/4"></div>
+        <h6 class="text-center text-2xl font-bold mx-4">Algunos de mis proyectos</h6>
+        <div class="border-t border-gray-300 w-1/4"></div>
+    </div>
+
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-12 mx-auto">
+          <div class="flex flex-wrap justify-center sm:-m-2 -mx-2 -mb-5 -mt-2">
+            <Proyect 
+              title="Ruta en Caravana 2025" 
+              description="Ruta en Caravana desde España hasta Alemania, pasando por Francia y Suiza" 
+              imageUrl="/public/FotoPortadaRutaCaravana.png" 
+              link="https://iscamo.runasp.net/"
+            />
+          </div>
+        </div>
+      </section>
+
+    <Footer></Footer>
+</Layout>
