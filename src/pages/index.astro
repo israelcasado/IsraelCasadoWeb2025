@@ -1,21 +1,17 @@
 ---
+import { Picture } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/footer.astro';
 import Proyect from '../components/newproyect.astro';
-
-const captiaImage = `<a href="https://www.captia.es/" target="_blank"><img src="/captia-ingenieria.jpg" alt="Captia Ingeniería" class="inline-block w-16 h-8"><span class="text-orange-500 text-xl font-bold"> INGENIERIA</span></a>`;
-const introductionText = `¡Hola! Soy un apasionado del desarrollo de software, especializado en .NET y trabajando como desarrollador de producto y analista programador en ${captiaImage}. Me motiva crear soluciones que optimizan procesos y potencian la automatización empresarial, facilitando la vida de las personas y las empresas.
-
-También disfruto explorando el desarrollo web, siempre buscando formas de mejorar la experiencia digital. Y cuando no estoy entre líneas de código, me encontrarás haciendo deporte o disfrutando de un estilo de vida saludable, porque para mí, el equilibrio entre tecnología y bienestar es la clave.
-
-Si quieres hablar de software, innovación o simplemente intercambiar ideas, aquí estoy. 🚀💻🏋️‍♂️`;
+import Captia from '../components/captia.astro';
+import imangePersonal from '/Public/Imagenes/IMG_20240820_141719.jpg';
 ---
 
 <Layout>
     <div class="container mx-auto px-4 mt-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="flex flex-col items-center justify-center">
-                <img src="/IMG_20240820_141719.jpg" alt="Foto de Israel Casado" class="w-full h-auto">
+              <Picture src={imangePersonal} formats={['avif', 'webp']} alt="Foto de Israel Casado" />
                 <div class="flex items-center mt-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
                         <path fill="none" stroke="#e31152" stroke-linecap="round" stroke-linejoin="round" d="m12.603 32.066l11.432 11.432l7.624-7.624m2.264-2.264l1.51-1.51c6.313-6.313 6.313-16.549 0-22.863q0 0 0 0c-6.314-6.314-16.55-6.314-22.865 0q0 0 0 0a16.17 16.17 0 0 0-2.064 20.333" stroke-width="1" />
@@ -25,9 +21,22 @@ Si quieres hablar de software, innovación o simplemente intercambiar ideas, aqu
                 </div>
             </div>
             <div class="col-span-1 md:col-span-2 flex items-center justify-center text-center">
-              <p class="text-lg italic text-center leading-relaxed max-w-3xl mx-auto" set:html={introductionText}></p>
-
-          </div>
+              <div class="max-w-3xl">
+                <p class="text-lg md:text-xl font-semibold text-gray-900 dark:text-white leading-relaxed">
+                  ¡Hola! Soy un apasionado del desarrollo de software, especializado en .NET y trabajando como desarrollador de producto y analista programador en <Captia />  
+                </p>
+                <p class="mt-4 text-lg md:text-xl font-semibold text-gray-900 dark:text-white leading-relaxed">
+                  Me motiva crear soluciones que optimizan procesos y potencian la automatización empresarial, facilitando la vida de las personas y las empresas.
+                </p>
+                <p class="mt-4 text-lg md:text-xl font-semibold text-gray-900 dark:text-white leading-relaxed">
+                  También disfruto explorando el desarrollo web, siempre buscando formas de mejorar la experiencia digital. Y cuando no estoy entre líneas de código, me encontrarás haciendo deporte o disfrutando de un estilo de vida saludable, porque para mí, el equilibrio entre tecnología y bienestar es la clave.
+                </p>
+                <p class="mt-4 text-lg md:text-xl font-semibold text-gray-900 dark:text-white leading-relaxed">
+                  Si quieres hablar de software, innovación o simplemente intercambiar ideas, aquí estoy. 🚀💻🏋️‍♂️
+                </p>
+              </div>
+            </div>
+            
         </div>
     </div>
 
@@ -43,7 +52,7 @@ Si quieres hablar de software, innovación o simplemente intercambiar ideas, aqu
             <Proyect 
               title="Ruta en Caravana 2025" 
               description="Ruta en Caravana desde España hasta Alemania, pasando por Francia y Suiza" 
-              imageUrl="/FotoPortadaRutaCaravana.png" 
+              imageUrl="Imagenes/FotoPortadaRutaCaravana.png" 
               link="https://iscamo.runasp.net/"
             />
           </div>
